@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block title %}SignUp{% endblock %}
+{% block head %}Sign Up!{% endblock %}
+{% block content %}
+    <style>
+    .jumbotron{
+        text-align: center;
+        position: absolute;
+
+    }
+</style>
+
+    <div class="jumbotron">
+    <form class="form-horizontal" role="form" method="post" action=".">{% csrf_token %}
+        <table class="table-responsive" border="0">
+            {{ form.as_table }}
+        </table>
+        <br><br>
+        <button type="submit" class="btn btn-primary" value="Register">SignUp!</button>
+    <br><br>
+      <a href="/" class="btn btn-info" role="button">Login</a>
+    </form>
+    <br>
+        </div>
+
+{% endblock %}
